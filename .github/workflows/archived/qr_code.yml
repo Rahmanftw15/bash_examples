@@ -1,5 +1,7 @@
-name: QR Generator
+name: QR Code Generator
+
 on: push
+
 jobs:
   build:
     runs-on: ubuntu-latest

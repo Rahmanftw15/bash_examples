@@ -6,7 +6,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        ref: qrcode
+        ref: main
     - uses: snow-actions/qrcode@v1.0.0
       with:
         text: www.linkedin.com/in/rahman150204

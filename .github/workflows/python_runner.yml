@@ -1,0 +1,25 @@
+name: Python Runner
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Clone a Python examples repository:
+      # https://github.com/geekcomputers/Python
+      - uses: actions/checkout@v3
+        with:
+          repository: geekcomputers/Python
+          # This repistory uses "master" branch (not main).
+          ref: master
+      # Setup Python 3.10
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      # This is a pure python class.
+      - run: python random-sentences.py
+      # quote.py requires installing "requests" python library.
+      - run: pip install requests
+      - run: python quote.py
